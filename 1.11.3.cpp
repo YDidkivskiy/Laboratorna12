@@ -6,6 +6,8 @@ int main() {
     system("chcp 65001");
     int sum = 0;
     int dobutok = 1;
+    int max = 0;
+    int min = 0;
 
     int arr[5] = {0, 5, -3, -3, -3};
 
@@ -15,8 +17,16 @@ int main() {
         }
     }
 
-    for (int d = 0; d < 5; ++d) {
-        dobutok *= arr[d];
+    for (int i = 1; i < 5; ++i) {
+        if (arr[i] > arr[max]) {
+            max = i;
+        }
+        if (arr[i] < arr[min]) {
+            min = i;
+        }
+    }
+    for (int i = min; i < max; ++i) {
+        dobutok *= arr[i];
     }
 
     std::cout << "Сума масиву: " << sum << std::endl;
